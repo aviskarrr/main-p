@@ -36,20 +36,21 @@ const Hero = () => {
           {/* Main title with typewriter effect */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 opacity-0 animate-fade-in-up" 
               style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-            <span className="gradient-text">Your Name</span>
+            <span className="gradient-text">Aviskar Poudel</span>
           </h1>
 
           {/* Subtitle with typewriter effect */}
           <div className="text-xl md:text-2xl lg:text-3xl text-muted-foreground mb-8 font-light opacity-0 animate-fade-in-up"
                style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-            <span className="typewriter">Computer Engineering Student</span>
+            <div style={{ display: 'inline-block', width: 'fit-content' }}>
+              <span className="typing-effect">Computer Engineering Student</span>
+            </div>
           </div>
 
           {/* Description */}
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 opacity-0 animate-fade-in-up leading-relaxed"
              style={{ animationDelay: '0.8s', animationFillMode: 'forwards' }}>
             Passionate about creating innovative solutions through code. 
-            Building the future with modern technologies and creative problem-solving.
           </p>
 
           {/* CTA buttons */}
@@ -77,23 +78,26 @@ const Hero = () => {
           <div className="flex justify-center space-x-6 opacity-0 animate-fade-in-up"
                style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>
             <a 
-              href="#" 
+              href="https://github.com/aviskarrr" 
               className="p-3 rounded-full glass-card hover-lift hover-invert group"
               aria-label="GitHub"
+              target="_blank"
             >
               <Github className="h-5 w-5 text-muted-foreground group-hover:text-current transition-colors" />
             </a>
             <a 
-              href="#" 
+              href="https://www.linkedin.com/in/aviskarpoudel/" 
               className="p-3 rounded-full glass-card hover-lift hover-invert group"
               aria-label="LinkedIn"
+              target="_blank"
             >
               <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-current transition-colors" />
             </a>
             <a 
-              href="#" 
+              href="mailto:aviskarp1@gmail.com" 
               className="p-3 rounded-full glass-card hover-lift hover-invert group"
               aria-label="Email"
+              target="_blank"
             >
               <Mail className="h-5 w-5 text-muted-foreground group-hover:text-current transition-colors" />
             </a>

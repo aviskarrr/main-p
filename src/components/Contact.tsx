@@ -3,26 +3,30 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, MapPin, Phone, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { useState } from 'react';
+import emailjs from '@emailjs/browser';
+import { useToast } from "@/components/ui/use-toast";
 
 const Contact = () => {
+  // Initialize EmailJS
+  emailjs.init({
+    publicKey: 'mspuZn_qqaLGXusha',
+  });
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email',
-      value: 'your.email@example.com',
+      value: 'aviskarp1@gmail.com',
       link: 'mailto:your.email@example.com'
-    },
-    {
-      icon: Phone,
-      title: 'Phone',
-      value: '+1 (555) 123-4567',
-      link: 'tel:+15551234567'
-    },
-    {
-      icon: MapPin,
-      title: 'Location',
-      value: 'Your City, Country',
-      link: '#'
     }
   ];
 
@@ -30,27 +34,67 @@ const Contact = () => {
     {
       icon: Github,
       label: 'GitHub',
-      url: 'https://github.com/yourusername',
+      url: 'https://github.com/aviskarrr',
       color: 'hover:text-primary'
     },
     {
       icon: Linkedin,
       label: 'LinkedIn',
-      url: 'https://linkedin.com/in/yourusername',
+      url: 'https://linkedin.com/in/aviskarpoudel',
       color: 'hover:text-blue-500'
     },
-    {
-      icon: Twitter,
-      label: 'Twitter',
-      url: 'https://twitter.com/yourusername',
-      color: 'hover:text-blue-400'
-    }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted');
+    setIsSubmitting(true);
+
+    try {
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message
+      };
+
+      await emailjs.send(
+        'service_m10xkbd',
+        'template_5htciyq',
+        templateParams,
+        {
+          publicKey: 'eT0oQlPxXbOQm4TME',
+        }
+      );
+
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -88,8 +132,11 @@ const Contact = () => {
                     </label>
                     <Input 
                       id="name"
+                      name="name"
                       placeholder="Your name"
-                      className="glass-card border-border/50"
+                      className="glass-card border-border/50 hover-subtle"
+                      value={formData.name}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -99,9 +146,12 @@ const Contact = () => {
                     </label>
                     <Input 
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="your.email@example.com"
-                      className="glass-card border-border/50"
+                      className="glass-card border-border/50 hover-subtle"
+                      value={formData.email}
+                      onChange={handleChange}
                       required
                     />
                   </div>
@@ -113,8 +163,11 @@ const Contact = () => {
                   </label>
                   <Input 
                     id="subject"
+                    name="subject"
                     placeholder="What's this about?"
-                    className="glass-card border-border/50"
+                    className="glass-card border-border/50 hover-subtle"
+                    value={formData.subject}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -125,9 +178,12 @@ const Contact = () => {
                   </label>
                   <Textarea 
                     id="message"
+                    name="message"
                     placeholder="Tell me about your project or idea..."
                     rows={6}
-                    className="glass-card border-border/50 resize-none"
+                    className="glass-card border-border/50 resize-none hover-subtle"
+                    value={formData.message}
+                    onChange={handleChange}
                     required
                   />
                 </div>
@@ -137,9 +193,19 @@ const Contact = () => {
                   variant="hero" 
                   size="lg" 
                   className="w-full group"
+                  disabled={isSubmitting}
                 >
-                  <Send className="h-5 w-5 mr-2 transition-transform group-hover:translate-x-1" />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <div className="h-5 w-5 mr-2 animate-spin rounded-full border-2 border-current border-t-transparent" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="h-5 w-5 mr-2 transition-transform group-hover:translate-x-1" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
             </Card>

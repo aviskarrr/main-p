@@ -24,10 +24,12 @@ export function ThemeProvider({
       attribute="class"
       defaultTheme={defaultTheme}
       enableSystem={enableSystem}
-      disableTransitionOnChange={disableTransitionOnChange}
+      disableTransitionOnChange={false}
       {...props}
     >
-      {children}
+      <div className="transition-colors duration-300 ease-out">
+        {children}
+      </div>
     </NextThemesProvider>
   );
 }

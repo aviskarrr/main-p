@@ -5,8 +5,8 @@ const About = () => {
   const highlights = [
     {
       icon: Code,
-      title: 'Clean Code',
-      description: 'Writing maintainable and efficient code with best practices'
+      title: 'Problem Solving',
+      description: 'Finding practical solutions to technical challenges'
     },
     {
       icon: Lightbulb,
@@ -39,80 +39,74 @@ const About = () => {
               About Me
             </span>
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              <span className="gradient-text">Get to know me</span>
+              <span className="gradient-text hover-lift inline-block">Get to know me</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               I'm a passionate Computer Engineering student with a love for creating 
-              innovative solutions and pushing the boundaries of technology.
+              innovative solutions.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Story section */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-semibold mb-4">My Journey</h3>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
-                <p>
-                  As a Computer Engineering student, I've developed a deep fascination 
-                  with the intersection of hardware and software. My journey began with 
-                  curiosity about how things work, and has evolved into a passion for 
-                  building solutions that make a difference.
-                </p>
-                <p>
-                  I specialize in modern web technologies and enjoy working on projects 
-                  that challenge me to learn new skills. From frontend development to 
-                  system design, I'm always eager to expand my knowledge and tackle 
-                  complex problems.
-                </p>
-                <p>
-                  When I'm not coding, you'll find me exploring the latest tech trends, 
-                  contributing to open-source projects, or brainstorming the next big idea 
-                  with fellow developers.
-                </p>
-              </div>
-            </div>
+          {/* Highlights grid */}
+          <div className="grid lg:grid-cols-2 gap-8 mt-12">
+            {highlights.map((item, index) => (
+              <Card 
+                key={index}
+                className="group relative p-6 backdrop-blur-md bg-background/30 hover:bg-background/40 
+                         border border-border/20 hover:border-primary/50
+                         transition-all duration-500 cursor-pointer overflow-hidden rounded-xl
+                         flex items-center gap-6 hover:shadow-lg"
+              >
+                {/* Enhanced glass shine effect */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-white/5 to-secondary/10" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-white/10 via-transparent to-white/5" />
+                </div>
 
-            {/* Highlights grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {highlights.map((item, index) => (
-                <Card 
-                  key={index}
-                  className="p-6 glass-card hover-lift hover-invert group cursor-pointer"
-                >
-                  <div className="mb-4">
-                    <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center mb-3">
-                      <item.icon className="h-6 w-6 text-primary-foreground" />
+                {/* Gloss overlay */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                  <div className="absolute inset-[-200%] bg-primary/5 rotate-45 translate-x-[60%] translate-y-[-90%] blur-2xl" />
+                  <div className="absolute inset-[-200%] bg-secondary/5 rotate-45 translate-x-[60%] translate-y-[90%] blur-2xl" />
+                </div>
+
+                {/* Large icon container with enhanced glass effect */}
+                <div className="relative shrink-0">
+                  <div className="w-24 h-24 rounded-2xl backdrop-blur-md bg-primary/20 
+                              flex items-center justify-center border border-primary/30
+                              transform group-hover:scale-105 group-hover:bg-primary/30 
+                              transition-all duration-500 group-hover:shadow-glow
+                              relative z-10 overflow-hidden">
+                    {/* Icon shine effect */}
+                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                      <div className="absolute inset-[-100%] bg-white/10 rotate-45 translate-x-[60%] group-hover:translate-y-[-60%] blur-md transition-transform duration-1000" />
                     </div>
-                    <h4 className="font-semibold text-sm mb-2 group-hover:text-current transition-colors">
-                      {item.title}
-                    </h4>
-                    <p className="text-xs text-muted-foreground group-hover:text-current/80 leading-relaxed transition-colors">
-                      {item.description}
-                    </p>
+                    
+                    <item.icon className="h-12 w-12 text-primary group-hover:text-primary-foreground transition-colors duration-500 relative z-10" />
                   </div>
-                </Card>
-              ))}
-            </div>
-          </div>
+                </div>
 
-          {/* Stats section */}
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { number: '2+', label: 'Years Learning' },
-              { number: '15+', label: 'Projects Built' },
-              { number: '5+', label: 'Technologies' },
-              { number: '100%', label: 'Passion' }
-            ].map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="text-2xl md:text-3xl font-bold gradient-text mb-2">
-                  {stat.number}
+                {/* Content section with enhanced hover effects */}
+                <div className="flex-1 relative z-10 transform group-hover:translate-x-2 transition-transform duration-500">
+                  <h4 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary 
+                              transition-colors duration-500 flex items-center gap-2">
+                    {item.title}
+                    <div className="h-px flex-1 bg-border/30 group-hover:bg-primary/50 transition-colors duration-500" />
+                  </h4>
+                  <p className="text-base text-muted-foreground group-hover:text-foreground 
+                             leading-relaxed transition-colors duration-500">
+                    {item.description}
+                  </p>
                 </div>
-                <div className="text-sm text-muted-foreground">
-                  {stat.label}
+
+                {/* Enhanced glossy highlights */}
+                <div className="absolute inset-0 pointer-events-none">
+                  <div className="absolute top-0 left-0 w-full h-1/3 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute bottom-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
-              </div>
+              </Card>
             ))}
           </div>
+
         </div>
       </div>
     </section>

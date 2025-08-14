@@ -6,47 +6,25 @@ import { ExternalLink, Github, Play } from 'lucide-react';
 const Projects = () => {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution with modern UI, payment integration, and admin dashboard. Built with React, Node.js, and PostgreSQL.',
+      title: 'Path Following Visualizer',
+      description: 'A visualization tool that demonstrates different pathfinding algorithms in action. Built with pygame, featuring interactive grid-based visualization.',
       image: '/placeholder.svg',
-      tech: ['React', 'Node.js', 'PostgreSQL', 'Stripe', 'Tailwind CSS'],
+      tech: ['python', 'pygame', 'a* algorightm', 'pathfinding'],
       status: 'Completed',
       links: {
-        github: '#',
-        live: '#',
-        demo: '#'
+        github: 'https://github.com/aviskarrr/wat-a-sta',
+
       }
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates, team collaboration features, and intuitive drag-and-drop interface.',
+      title: 'WeatherCall App',
+      description: 'A C++ weather application that provides real-time weather information. Features command-line interface and weather data retrieval.',
       image: '/placeholder.svg',
-      tech: ['Next.js', 'TypeScript', 'Supabase', 'Real-time', 'Drag & Drop'],
-      status: 'In Progress',
-      links: {
-        github: '#',
-        live: '#'
-      }
-    },
-    {
-      title: 'Weather Analytics Dashboard',
-      description: 'Interactive dashboard displaying weather data with charts, forecasts, and location-based insights using modern data visualization.',
-      image: '/placeholder.svg',
-      tech: ['React', 'D3.js', 'Weather API', 'Charts', 'Responsive'],
+      tech: ['Cpp', 'weather api', 'cli'],
       status: 'Completed',
       links: {
-        github: '#',
-        live: '#'
-      }
-    },
-    {
-      title: 'AI Chat Assistant',
-      description: 'An intelligent chat application powered by AI, featuring natural language processing and context-aware responses.',
-      image: '/placeholder.svg',
-      tech: ['Python', 'OpenAI API', 'FastAPI', 'WebSockets', 'AI/ML'],
-      status: 'Coming Soon',
-      links: {
-        github: '#'
+        github: 'https://github.com/aviskarrr/WeatherCall',
+
       }
     }
   ];
@@ -119,7 +97,7 @@ const Projects = () => {
                       <Badge 
                         key={techIndex}
                         variant="secondary"
-                        className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
+                        className="text-xs hover:bg-primary/20 hover:text-primary transition-colors"
                       >
                         {tech}
                       </Badge>
@@ -142,7 +120,7 @@ const Projects = () => {
                       </Button>
                     )}
                     
-                    {project.links.live && (
+                    {/* {project.links.live && (
                       <Button 
                         variant="default" 
                         size="sm"
@@ -154,19 +132,9 @@ const Projects = () => {
                           Live
                         </a>
                       </Button>
-                    )}
+                    )} */}
 
-                    {project.links.demo && (
-                      <Button 
-                        variant="secondary" 
-                        size="sm"
-                        asChild
-                      >
-                        <a href={project.links.demo} target="_blank" rel="noopener noreferrer">
-                          <Play className="h-4 w-4" />
-                        </a>
-                      </Button>
-                    )}
+
                   </div>
                 </div>
               </Card>
@@ -179,7 +147,7 @@ const Projects = () => {
               Want to see more of my work?
             </p>
             <Button variant="hero" size="lg" asChild>
-              <a href="#" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/aviskarrr" target="_blank" rel="noopener noreferrer">
                 <Github className="h-5 w-5 mr-2" />
                 View All Projects on GitHub
               </a>
