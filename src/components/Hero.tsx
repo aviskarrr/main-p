@@ -78,24 +78,24 @@ const Hero = () => {
                style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>
             <a 
               href="#" 
-              className="p-3 rounded-full glass-card hover-lift group"
+              className="p-3 rounded-full glass-card hover-lift hover-invert group"
               aria-label="GitHub"
             >
-              <Github className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+              <Github className="h-5 w-5 text-muted-foreground group-hover:text-current transition-colors" />
             </a>
             <a 
               href="#" 
-              className="p-3 rounded-full glass-card hover-lift group"
+              className="p-3 rounded-full glass-card hover-lift hover-invert group"
               aria-label="LinkedIn"
             >
-              <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+              <Linkedin className="h-5 w-5 text-muted-foreground group-hover:text-current transition-colors" />
             </a>
             <a 
               href="#" 
-              className="p-3 rounded-full glass-card hover-lift group"
+              className="p-3 rounded-full glass-card hover-lift hover-invert group"
               aria-label="Email"
             >
-              <Mail className="h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
+              <Mail className="h-5 w-5 text-muted-foreground group-hover:text-current transition-colors" />
             </a>
           </div>
         </div>
@@ -105,10 +105,10 @@ const Hero = () => {
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-float">
         <button 
           onClick={() => scrollToSection('about')}
-          className="p-2 rounded-full glass-card hover-lift group"
+          className="p-2 rounded-full glass-card hover-lift hover-invert group"
           aria-label="Scroll to About"
         >
-          <ChevronDown className="h-6 w-6 text-muted-foreground group-hover:text-primary transition-colors" />
+          <ChevronDown className="h-6 w-6 text-muted-foreground group-hover:text-current transition-colors" />
         </button>
       </div>
     </section>

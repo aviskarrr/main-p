@@ -77,16 +77,16 @@ const About = () => {
               {highlights.map((item, index) => (
                 <Card 
                   key={index}
-                  className="p-6 glass-card hover-lift group cursor-pointer"
+                  className="p-6 glass-card hover-lift hover-invert group cursor-pointer"
                 >
                   <div className="mb-4">
                     <div className="w-12 h-12 rounded-lg bg-gradient-primary flex items-center justify-center mb-3">
                       <item.icon className="h-6 w-6 text-primary-foreground" />
                     </div>
-                    <h4 className="font-semibold text-sm mb-2 group-hover:text-primary transition-colors">
+                    <h4 className="font-semibold text-sm mb-2 group-hover:text-current transition-colors">
                       {item.title}
                     </h4>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-muted-foreground group-hover:text-current/80 leading-relaxed transition-colors">
                       {item.description}
                     </p>
                   </div>

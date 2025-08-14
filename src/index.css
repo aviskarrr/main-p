@@ -8,67 +8,72 @@
 
 @layer base {
   :root {
-    /* Dark theme base */
-    --background: 215 28% 7%;
-    --foreground: 213 31% 91%;
+    /* Light theme - Urban Orange palette */
+    --background: 35 20% 95%;
+    --foreground: 20 14% 8%;
 
     /* Cards and surfaces */
-    --card: 215 25% 9%;
-    --card-foreground: 213 31% 91%;
-    --card-glass: 215 25% 12%;
+    --card: 30 25% 98%;
+    --card-foreground: 20 14% 8%;
+    --card-glass: 35 30% 96%;
 
     /* Interactive elements */
-    --popover: 215 25% 9%;
-    --popover-foreground: 213 31% 91%;
+    --popover: 30 25% 98%;
+    --popover-foreground: 20 14% 8%;
 
-    /* Brand colors */
-    --primary: 195 100% 65%;
-    --primary-foreground: 215 28% 7%;
-    --primary-glow: 195 100% 75%;
+    /* Urban Orange brand colors */
+    --primary: 25 95% 60%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 20 100% 70%;
 
-    /* Secondary accent */
-    --secondary: 260 100% 70%;
-    --secondary-foreground: 213 31% 91%;
-    --secondary-glow: 260 100% 80%;
+    /* Secondary accent - Deep orange */
+    --secondary: 15 85% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 10 90% 65%;
 
     /* Muted elements */
-    --muted: 215 20% 15%;
-    --muted-foreground: 215 15% 65%;
+    --muted: 25 20% 90%;
+    --muted-foreground: 25 10% 45%;
 
-    /* Accent highlights */
-    --accent: 280 100% 70%;
-    --accent-foreground: 213 31% 91%;
+    /* Accent highlights - Burnt orange */
+    --accent: 18 90% 50%;
+    --accent-foreground: 0 0% 100%;
 
     /* Status colors */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 213 31% 91%;
+    --destructive-foreground: 0 0% 100%;
 
     --success: 142 76% 36%;
-    --success-foreground: 213 31% 91%;
+    --success-foreground: 0 0% 100%;
 
     /* Borders and inputs */
-    --border: 215 20% 20%;
-    --input: 215 20% 18%;
-    --ring: 195 100% 65%;
+    --border: 25 30% 85%;
+    --input: 25 25% 88%;
+    --ring: 25 95% 60%;
 
     /* Design tokens */
     --radius: 0.75rem;
 
-    /* Gradients */
+    /* Urban gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
+    --gradient-urban: linear-gradient(135deg, hsl(25, 95%, 60%), hsl(15, 85%, 55%), hsl(18, 90%, 50%));
     --gradient-glass: linear-gradient(135deg, 
-      hsla(var(--card-glass), 0.8), 
-      hsla(var(--card-glass), 0.4));
+      hsla(var(--card-glass), 0.9), 
+      hsla(var(--card-glass), 0.6));
 
     /* Shadows and glows */
-    --shadow-glow: 0 0 30px hsla(var(--primary), 0.3);
-    --shadow-accent: 0 0 40px hsla(var(--accent), 0.2);
-    --shadow-card: 0 8px 32px hsla(0, 0%, 0%, 0.3);
+    --shadow-glow: 0 0 30px hsla(var(--primary), 0.4);
+    --shadow-accent: 0 0 40px hsla(var(--accent), 0.3);
+    --shadow-card: 0 8px 32px hsla(25, 30%, 20%, 0.15);
 
     /* Animation timings */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    /* Inversion colors for hover effects */
+    --invert-bg: hsl(var(--foreground));
+    --invert-text: hsl(var(--background));
 
     --sidebar-background: 0 0% 98%;
 
@@ -88,41 +93,65 @@
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark theme - Urban Orange palette */
+    --background: 20 14% 4%;
+    --foreground: 35 20% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Cards and surfaces */
+    --card: 20 20% 6%;
+    --card-foreground: 35 20% 95%;
+    --card-glass: 20 25% 8%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Interactive elements */
+    --popover: 20 20% 6%;
+    --popover-foreground: 35 20% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Urban Orange brand colors */
+    --primary: 25 95% 65%;
+    --primary-foreground: 20 14% 4%;
+    --primary-glow: 20 100% 75%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Secondary accent */
+    --secondary: 15 85% 60%;
+    --secondary-foreground: 35 20% 95%;
+    --secondary-glow: 10 90% 70%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Muted elements */
+    --muted: 20 20% 12%;
+    --muted-foreground: 25 15% 65%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Accent highlights */
+    --accent: 18 90% 55%;
+    --accent-foreground: 35 20% 95%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 35 20% 95%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --success: 142 76% 36%;
+    --success-foreground: 35 20% 95%;
+
+    /* Borders and inputs */
+    --border: 20 25% 15%;
+    --input: 20 20% 12%;
+    --ring: 25 95% 65%;
+
+    /* Urban gradients for dark mode */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
+    --gradient-urban: linear-gradient(135deg, hsl(25, 95%, 65%), hsl(15, 85%, 60%), hsl(18, 90%, 55%));
+    --gradient-glass: linear-gradient(135deg, 
+      hsla(var(--card-glass), 0.9), 
+      hsla(var(--card-glass), 0.6));
+
+    /* Enhanced shadows for dark mode */
+    --shadow-glow: 0 0 40px hsla(var(--primary), 0.5);
+    --shadow-accent: 0 0 50px hsla(var(--accent), 0.4);
+    --shadow-card: 0 8px 32px hsla(0, 0%, 0%, 0.6);
+
+    /* Inversion colors for hover effects */
+    --invert-bg: hsl(var(--foreground));
+    --invert-text: hsl(var(--background));
   }
 }
 
@@ -134,13 +163,18 @@
   body {
     @apply bg-background text-foreground font-inter;
     background-image: 
-      radial-gradient(at 40% 20%, hsla(var(--primary), 0.15) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, hsla(var(--secondary), 0.15) 0px, transparent 50%),
-      radial-gradient(at 0% 50%, hsla(var(--accent), 0.1) 0px, transparent 50%);
+      radial-gradient(at 40% 20%, hsla(25, 95%, 60%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(15, 85%, 55%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(18, 90%, 50%, 0.1) 0px, transparent 50%);
   }
 
   html {
     scroll-behavior: smooth;
+  }
+
+  /* Theme transition */
+  * {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
   }
 }
 
@@ -161,12 +195,23 @@
     box-shadow: var(--shadow-accent);
   }
 
-  /* Gradient text */
+  /* Gradient text with urban colors */
   .gradient-text {
-    background: var(--gradient-primary);
+    background: var(--gradient-urban);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Inverted hover effects */
+  .hover-invert {
+    transition: var(--transition-smooth);
+  }
+
+  .hover-invert:hover {
+    background-color: var(--invert-bg);
+    color: var(--invert-text);
+    transform: translateY(-2px);
   }
 
   /* Hover animations */

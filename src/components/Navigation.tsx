@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import ThemeToggle from '@/components/ThemeToggle';
 
 const Navigation = () => {
   const [activeSection, setActiveSection] = useState('home');
@@ -45,29 +46,34 @@ const Navigation = () => {
             Portfolio
           </div>
           
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className={`nav-link text-sm font-medium transition-colors ${
-                  activeSection === item.id
-                    ? 'text-primary'
-                    : 'text-muted-foreground hover:text-foreground'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
-          </div>
+          <div className="flex items-center space-x-4">
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) => (
+                <button
+                  key={item.id}
+                  onClick={() => scrollToSection(item.id)}
+                  className={`nav-link text-sm font-medium transition-colors hover-invert px-3 py-2 rounded-lg ${
+                    activeSection === item.id
+                      ? 'text-primary bg-primary/10'
+                      : 'text-muted-foreground'
+                  }`}
+                >
+                  {item.label}
+                </button>
+              ))}
+            </div>
 
-          <Button 
-            variant="hero" 
-            size="sm"
-            onClick={() => scrollToSection('contact')}
-          >
-            Get in Touch
-          </Button>
+            <ThemeToggle />
+
+            <Button 
+              variant="hero" 
+              size="sm"
+              onClick={() => scrollToSection('contact')}
+              className="hover-invert"
+            >
+              Get in Touch
+            </Button>
+          </div>
         </div>
       </div>
     </nav>
