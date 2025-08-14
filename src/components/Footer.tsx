@@ -47,8 +47,7 @@ const Footer = () => {
           {/* Divider */}
           <div className="border-t border-border/20 mt-8 pt-8 text-center">
             <p className="text-muted-foreground text-sm flex items-center justify-center">
-              © {currentYear} Aviskar Poudel. Made with 
-              <Heart className="h-4 w-4 mx-1 text-red-500 fill-current" />
+              © {currentYear} Aviskar Poudel. 
             </p>
           </div>
         </div>
