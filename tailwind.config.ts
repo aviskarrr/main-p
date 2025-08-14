@@ -81,7 +81,7 @@ export default {
 			backgroundImage: {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-accent': 'var(--gradient-accent)',
-				'gradient-urban': 'var(--gradient-urban)',
+				'gradient-creative': 'var(--gradient-creative)',
 				'gradient-glass': 'var(--gradient-glass)',
 			},
 			boxShadow: {

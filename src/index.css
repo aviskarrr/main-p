@@ -8,35 +8,35 @@
 
 @layer base {
   :root {
-    /* Light theme - Urban Orange palette */
-    --background: 35 20% 95%;
-    --foreground: 20 14% 8%;
+    /* Light theme - Creative Purple-Pink palette */
+    --background: 320 20% 97%;
+    --foreground: 260 15% 8%;
 
     /* Cards and surfaces */
-    --card: 30 25% 98%;
-    --card-foreground: 20 14% 8%;
-    --card-glass: 35 30% 96%;
+    --card: 315 30% 99%;
+    --card-foreground: 260 15% 8%;
+    --card-glass: 320 25% 96%;
 
     /* Interactive elements */
-    --popover: 30 25% 98%;
-    --popover-foreground: 20 14% 8%;
+    --popover: 315 30% 99%;
+    --popover-foreground: 260 15% 8%;
 
-    /* Urban Orange brand colors */
-    --primary: 25 95% 60%;
+    /* Creative Purple brand colors */
+    --primary: 280 100% 70%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 20 100% 70%;
+    --primary-glow: 285 100% 80%;
 
-    /* Secondary accent - Deep orange */
-    --secondary: 15 85% 55%;
+    /* Secondary accent - Deep pink */
+    --secondary: 320 85% 65%;
     --secondary-foreground: 0 0% 100%;
-    --secondary-glow: 10 90% 65%;
+    --secondary-glow: 325 90% 75%;
 
     /* Muted elements */
-    --muted: 25 20% 90%;
-    --muted-foreground: 25 10% 45%;
+    --muted: 320 20% 92%;
+    --muted-foreground: 280 10% 45%;
 
-    /* Accent highlights - Burnt orange */
-    --accent: 18 90% 50%;
+    /* Accent highlights - Violet */
+    --accent: 260 100% 65%;
     --accent-foreground: 0 0% 100%;
 
     /* Status colors */
@@ -47,17 +47,17 @@
     --success-foreground: 0 0% 100%;
 
     /* Borders and inputs */
-    --border: 25 30% 85%;
-    --input: 25 25% 88%;
-    --ring: 25 95% 60%;
+    --border: 320 30% 88%;
+    --input: 320 25% 90%;
+    --ring: 280 100% 70%;
 
     /* Design tokens */
     --radius: 0.75rem;
 
-    /* Urban gradients */
+    /* Creative gradients */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
-    --gradient-urban: linear-gradient(135deg, hsl(25, 95%, 60%), hsl(15, 85%, 55%), hsl(18, 90%, 50%));
+    --gradient-creative: linear-gradient(135deg, hsl(280, 100%, 70%), hsl(320, 85%, 65%), hsl(260, 100%, 65%));
     --gradient-glass: linear-gradient(135deg, 
       hsla(var(--card-glass), 0.9), 
       hsla(var(--card-glass), 0.6));
@@ -65,15 +65,11 @@
     /* Shadows and glows */
     --shadow-glow: 0 0 30px hsla(var(--primary), 0.4);
     --shadow-accent: 0 0 40px hsla(var(--accent), 0.3);
-    --shadow-card: 0 8px 32px hsla(25, 30%, 20%, 0.15);
+    --shadow-card: 0 8px 32px hsla(280, 30%, 20%, 0.15);
 
     /* Animation timings */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-
-    /* Inversion colors for hover effects */
-    --invert-bg: hsl(var(--foreground));
-    --invert-text: hsl(var(--background));
 
     --sidebar-background: 0 0% 98%;
 
@@ -93,53 +89,53 @@
   }
 
   .dark {
-    /* Dark theme - Urban Orange palette */
-    --background: 20 14% 4%;
-    --foreground: 35 20% 95%;
+    /* Dark theme - Creative Purple-Pink palette */
+    --background: 260 15% 4%;
+    --foreground: 320 20% 97%;
 
     /* Cards and surfaces */
-    --card: 20 20% 6%;
-    --card-foreground: 35 20% 95%;
-    --card-glass: 20 25% 8%;
+    --card: 260 20% 6%;
+    --card-foreground: 320 20% 97%;
+    --card-glass: 260 25% 8%;
 
     /* Interactive elements */
-    --popover: 20 20% 6%;
-    --popover-foreground: 35 20% 95%;
+    --popover: 260 20% 6%;
+    --popover-foreground: 320 20% 97%;
 
-    /* Urban Orange brand colors */
-    --primary: 25 95% 65%;
-    --primary-foreground: 20 14% 4%;
-    --primary-glow: 20 100% 75%;
+    /* Creative Purple brand colors */
+    --primary: 280 100% 75%;
+    --primary-foreground: 260 15% 4%;
+    --primary-glow: 285 100% 85%;
 
     /* Secondary accent */
-    --secondary: 15 85% 60%;
-    --secondary-foreground: 35 20% 95%;
-    --secondary-glow: 10 90% 70%;
+    --secondary: 320 85% 70%;
+    --secondary-foreground: 320 20% 97%;
+    --secondary-glow: 325 90% 80%;
 
     /* Muted elements */
-    --muted: 20 20% 12%;
-    --muted-foreground: 25 15% 65%;
+    --muted: 260 20% 12%;
+    --muted-foreground: 280 15% 65%;
 
     /* Accent highlights */
-    --accent: 18 90% 55%;
-    --accent-foreground: 35 20% 95%;
+    --accent: 260 100% 70%;
+    --accent-foreground: 320 20% 97%;
 
     /* Status colors */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 35 20% 95%;
+    --destructive-foreground: 320 20% 97%;
 
     --success: 142 76% 36%;
-    --success-foreground: 35 20% 95%;
+    --success-foreground: 320 20% 97%;
 
     /* Borders and inputs */
-    --border: 20 25% 15%;
-    --input: 20 20% 12%;
-    --ring: 25 95% 65%;
+    --border: 260 25% 15%;
+    --input: 260 20% 12%;
+    --ring: 280 100% 75%;
 
-    /* Urban gradients for dark mode */
+    /* Creative gradients for dark mode */
     --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
     --gradient-accent: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary)));
-    --gradient-urban: linear-gradient(135deg, hsl(25, 95%, 65%), hsl(15, 85%, 60%), hsl(18, 90%, 55%));
+    --gradient-creative: linear-gradient(135deg, hsl(280, 100%, 75%), hsl(320, 85%, 70%), hsl(260, 100%, 70%));
     --gradient-glass: linear-gradient(135deg, 
       hsla(var(--card-glass), 0.9), 
       hsla(var(--card-glass), 0.6));
@@ -148,10 +144,6 @@
     --shadow-glow: 0 0 40px hsla(var(--primary), 0.5);
     --shadow-accent: 0 0 50px hsla(var(--accent), 0.4);
     --shadow-card: 0 8px 32px hsla(0, 0%, 0%, 0.6);
-
-    /* Inversion colors for hover effects */
-    --invert-bg: hsl(var(--foreground));
-    --invert-text: hsl(var(--background));
   }
 }
 
@@ -163,9 +155,9 @@
   body {
     @apply bg-background text-foreground font-inter;
     background-image: 
-      radial-gradient(at 40% 20%, hsla(25, 95%, 60%, 0.15) 0px, transparent 50%),
-      radial-gradient(at 80% 0%, hsla(15, 85%, 55%, 0.15) 0px, transparent 50%),
-      radial-gradient(at 0% 50%, hsla(18, 90%, 50%, 0.1) 0px, transparent 50%);
+      radial-gradient(at 40% 20%, hsla(280, 100%, 70%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 80% 0%, hsla(320, 85%, 65%, 0.15) 0px, transparent 50%),
+      radial-gradient(at 0% 50%, hsla(260, 100%, 65%, 0.1) 0px, transparent 50%);
   }
 
   html {
@@ -195,23 +187,12 @@
     box-shadow: var(--shadow-accent);
   }
 
-  /* Gradient text with urban colors */
+  /* Gradient text with creative colors */
   .gradient-text {
-    background: var(--gradient-urban);
+    background: var(--gradient-creative);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-  }
-
-  /* Inverted hover effects */
-  .hover-invert {
-    transition: var(--transition-smooth);
-  }
-
-  .hover-invert:hover {
-    background-color: var(--invert-bg);
-    color: var(--invert-text);
-    transform: translateY(-2px);
   }
 
   /* Hover animations */
