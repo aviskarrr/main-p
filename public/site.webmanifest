@@ -1,0 +1,17 @@
+{
+  "name": "Aviskar Poudel Portfolio",
+  "short_name": "Aviskar",
+  "description": "Portfolio of Aviskar Poudel - Computer Engineering Student & Developer",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
